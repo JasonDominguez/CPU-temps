@@ -33,12 +33,12 @@ def main():
 def strCreator(sol):
     """
     Notes:
-        This function creates the output string in the form x_k <= x < x_k+1; y_i = c_0 + c_1 x: type
+        This function creates the output string in the form x_k <= x < x_k+1; y_i = c_0 + c_1 x; type
         where
             x_k and x_k+1 are the domain in which y_k is applicable
             y_k is the kth function
             type is either least-squares or interpolation
-            
+
     Args:
         sol: Dict{'xFrom': , 'xTo': , 'yi': ,'c0': , 'c1': , 'type': }
 
