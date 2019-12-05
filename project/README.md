@@ -8,8 +8,11 @@ global least squares approximation.
 ## Assignment page:   
 [Semester Project - CPU Temps](https://www.cs.odu.edu/~tkennedy/cs417/f19/Assts/project-cpu-temps/index.html#input-format)  
   
-## To run:  
-python3 cpuTempProject.py "file false  
+## To run with no-labels files (those included):  
+python3 cpuTempProject.py "file name" false  
+
+## To run with labels files:  
+python3 cpuTempProject.py "file name" true
 
 ---  
 Written in python3 with pydoc3 documentaion
