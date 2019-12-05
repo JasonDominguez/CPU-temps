@@ -29,7 +29,23 @@ def main():
         f.write(strCreator(ls))
         f.close()
 
+
 def strCreator(sol):
+    """
+    Notes:
+        This function creates the output string in the form x_k <= x < x_k+1; y_i = c_0 + c_1 x: type
+        where
+            x_k and x_k+1 are the domain in which y_k is applicable
+            y_k is the kth function
+            type is either least-squares or interpolation
+            
+    Args:
+        sol: Dict{'xFrom': , 'xTo': , 'yi': ,'c0': , 'c1': , 'type': }
+
+    Yields:
+        A formated string with new line charater at the end
+    """
+
     domain = f"{sol['xFrom']} <= x < {sol['xTo']};"
 
     if sol['c1'] == 0:
@@ -43,6 +59,8 @@ def strCreator(sol):
 
     string = f"{domain:^20}{func:<30}{sol['type']}\n"
     return string
+
+
 
 if __name__ == "__main__":
     main()

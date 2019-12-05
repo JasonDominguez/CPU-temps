@@ -2,6 +2,20 @@
 from tableMaker import makeXtable, makeYtable
 
 def interpolation (data, core):
+    """
+    Notes:
+        This function takes the data set and a core number and returns a piecewise 
+        Linear Interpolation approximation for each step in the data set.
+        This function is based on using Newton's form
+
+    Args:
+        data: a list with each element containing a time and a list of the core tempatures at that time
+        core: 0-indexed core number
+
+    Yields:
+        a list of dict objects {'xFrom': , 'xTo': , 'yi': ,'c0': , 'c1': , 'type': }
+    
+    """
     x = makeXtable(data)
     y = makeYtable(data, core)
     solution = []

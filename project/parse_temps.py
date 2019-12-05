@@ -7,7 +7,6 @@ All code may be used freely in the semester project, iff it is imported using
 represents one or more functions.
 """
 
-
 from typing import (TextIO, Iterator, List, Tuple)
 
 
