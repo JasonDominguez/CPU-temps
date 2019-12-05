@@ -1,23 +1,31 @@
 #! /usr/bin/env python3
 from tableMaker import makeXtable, makeYtable
 
-def interpolation (data):
+def interpolation (data, core):
     x = makeXtable(data)
-    y = makeYtable(data, 0) #add loop for all cores
+    y = makeYtable(data, core)
     solution = []
 
     i = 1
     while i < len(x):
-        xFrom = x[i-1]
-        xTo = x[i]
-        yi = i-1
-        c1 = (y[i]-y[i-1])/(x[i]-x[i-1])
-        x0 = x[i-1]
-        c0 = y[i-1] - c1 * x0
-
-        c1 = '{:.2e}'.format(c1)
-        c0 = '{:.2f}'.format(c0)
-        temp = {'xFrom': xFrom, 'xTo': xTo, 'yi':yi, 'c1': c1, 'x0': x0, 'c0': c0}
+        if y[i] == y[i-1]:#will cause c1 to be exactly 0
+            c1 = 0
+            c0 = y[i-1]
+        elif (y[i]-y[i-1]) == (x[i]-x[i-1]):#will cause c1 to be exactly 1
+            c1 = 1
+            c0 = y[i-1] - x[i-1]
+        else:
+            c1 = (y[i]-y[i-1])/(x[i]-x[i-1])
+            c0 = y[i-1] - c1 * x[i-1]
+        
+        temp = {
+                'xFrom': x[i-1], 
+                'xTo': x[i], 
+                'yi': i-1,
+                'c0': c0, 
+                'c1': c1, 
+                'type': "interpolation"
+                }
         
         solution.append(temp)
         i += 1

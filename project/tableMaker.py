@@ -24,18 +24,9 @@ def makeYmatrix(data, core):
         y.append([temp[1][core]])
     return y
 
-def transpose(matrix):
-    tMatrix = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
-    return tMatrix
+
     
-def multiply(m1, m2):
-    result = [[0 for x in range(len(m2[0]))] for y in range(len(m1))]
-    for i in range(len(m1)): 
-        for j in range(len(m2[0])): 
-            for k in range(len(m2)): 
-                result[i][j] += m1[i][k] * m2[k][j] 
-    
-    return result
+
 
     
     
