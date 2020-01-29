@@ -19,7 +19,7 @@ def main():
         for temps_as_floats in parse_raw_temps(temps_file, units=includes_units):
             data.append(temps_as_floats)
 
-    basename = input_temps.split('.')[0]
+    basename = input_temps.split('/')[-1].split('.')[0]
     for coreNum in range(len(data[0][1])):
         f = open(f"{basename}-core-{coreNum}.txt", "w")
         ls = leastSquares(data, coreNum)

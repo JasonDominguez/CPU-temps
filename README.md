@@ -5,10 +5,14 @@ This program takes a list of cpu core temps and calculates a linear piecewise in
 The output files contain a linear approximation between each tempeture reading on each line. The last line of the file is a global least squares approximation.   
   
 ## To run with no-labels files (those included):  
-python3 cpuTempProject.py "file name" false  
+```
+python3 cpuTempProject.py [input file] false  
+```
 
 ## To run with labels files:  
-python3 cpuTempProject.py "file name" true
+```   
+python3 cpuTempProject.py [input file] true  
+```
 
 ---  
 Written in python3 with pydoc3 documentaion
