@@ -1,4 +1,4 @@
-# CPU tempeture semester project  
+# CPU temps analysis semester project  
 
 This program takes a list of cpu core temps and calculates a linear piecewise interpolation for each step as well as a global least squares approximation.  
 
