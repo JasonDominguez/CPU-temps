@@ -1,7 +1,19 @@
-# 417 semester project
+# CPU tempeture semester project  
 
-cs417 gitLab: https://git-community.cs.odu.edu/tkennedy/cs417-lecture-examples/tree/f19
+This program takes a list of cpu core temps and calculates a linear piecewise interpolation for each step as well as a global least squares approximation.  
 
-assignment page: https://www.cs.odu.edu/~tkennedy/cs417/latest/Assts/project-cpu-temps/index.html
+The output files contain a linear approximation between each tempeture reading on each line. The last line of the file is a  
+global least squares approximation.  
 
-To run demo "python3 parseTempsDemo.py tempData.txt False"
+## Assignment page:   
+[Semester Project - CPU Temps](https://www.cs.odu.edu/~tkennedy/cs417/f19/Assts/project-cpu-temps/index.html#input-format)  
+  
+## To run with no-labels files (those included):  
+python3 cpuTempProject.py "file name" false  
+
+## To run with labels files:  
+python3 cpuTempProject.py "file name" true
+
+---  
+Written in python3 with pydoc3 documentaion
+
